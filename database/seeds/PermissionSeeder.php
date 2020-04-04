@@ -27,7 +27,7 @@ class PermissionSeeder extends Seeder
         ]);
 
         factory(App\Permission::class)->create([
-            'name' => 'Delete ustomer',
+            'name' => 'Delete Customer',
             'slug' => 'delete-customer'
         ]);
     }

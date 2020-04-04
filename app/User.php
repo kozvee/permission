@@ -37,6 +37,15 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    public function checkPermission($permission)
+    {
+        if(auth()->user()->role->permissions->contains('slug', $permission)) {
+            return true;
+        }
+
+        return false;
+    }
+
     public function role()
     {
         return $this->belongsTo(Role::class);

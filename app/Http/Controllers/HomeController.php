@@ -23,14 +23,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $userPermissions = \App\User::findOrFail(1)->role->permissions;
-
-        foreach($userPermissions as $up) {
-            echo $up->name . '<br>';
-        }
-
-        return 'All';
-
         return view('home');
     }
 }

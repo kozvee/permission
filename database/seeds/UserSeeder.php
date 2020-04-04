@@ -14,49 +14,41 @@ class UserSeeder extends Seeder
         factory(App\User::class)->create([
             'name' => 'Admin',
             'email' => 'admin@gmail.com',
-            'role_id' => 2
         ]);
 
         factory(App\User::class)->create([
             'name' => 'Admin Two',
             'email' => 'admin2@gmail.com',
-            'role_id' => 2
         ]);
 
         factory(App\User::class)->create([
             'name' => 'Finance',
             'email' => 'finance@gmail.com',
-            'role_id' => 3
         ]);
 
         factory(App\User::class)->create([
             'name' => 'Finance Two',
             'email' => 'finance2@gmail.com',
-            'role_id' => 3
         ]);
 
         factory(App\User::class)->create([
             'name' => 'Leader',
             'email' => 'leader@gmail.com',
-            'role_id' => 4
         ]);
 
         factory(App\User::class)->create([
             'name' => 'Leader Two',
             'email' => 'leader2@gmail.com',
-            'role_id' => 4
         ]);
 
         factory(App\User::class)->create([
             'name' => 'Staff',
             'email' => 'staff@gmail.com',
-            'role_id' => 5
         ]);
 
         factory(App\User::class)->create([
             'name' => 'Staff Two',
             'email' => 'staff2@gmail.com',
-            'role_id' => 5
         ]);
 
         factory(App\User::class)->create([
