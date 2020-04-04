@@ -17,13 +17,13 @@ class RoleSeeder extends Seeder
         ]);
 
         factory(App\Role::class)->create([
-            'name' => 'Finance',
-            'slug' => 'finance'
+            'name' => 'Sale & Marketing',
+            'slug' => 'sale-marketing'
         ]);
 
         factory(App\Role::class)->create([
-            'name' => 'Leader',
-            'slug' => 'leader'
+            'name' => 'Customer Service',
+            'slug' => 'customer-service'
         ]);
 
         factory(App\Role::class)->create([

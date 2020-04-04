@@ -74,12 +74,12 @@ class LoginController extends Controller
                     return redirect(route('admin.dashboard'));
                     break;
 
-                case 'finance':
-                    return redirect(route('finance.dashboard'));
+                case 'sale-marketing':
+                    return redirect(route('sale-marketing.dashboard'));
                     break;
 
-                case 'leader':
-                    return redirect(route('leader.dashboard'));
+                case 'customer-service':
+                    return redirect(route('customer-service.dashboard'));
                     break;
 
                 case 'staff':

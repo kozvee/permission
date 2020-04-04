@@ -22,23 +22,23 @@ class UserSeeder extends Seeder
         ]);
 
         factory(App\User::class)->create([
-            'name' => 'Finance',
-            'email' => 'finance@gmail.com',
+            'name' => 'Sale User One',
+            'email' => 'sale@gmail.com',
         ]);
 
         factory(App\User::class)->create([
-            'name' => 'Finance Two',
-            'email' => 'finance2@gmail.com',
+            'name' => 'Sale User Two',
+            'email' => 'sale2@gmail.com',
         ]);
 
         factory(App\User::class)->create([
-            'name' => 'Leader',
-            'email' => 'leader@gmail.com',
+            'name' => 'Service User',
+            'email' => 'service@gmail.com',
         ]);
 
         factory(App\User::class)->create([
-            'name' => 'Leader Two',
-            'email' => 'leader2@gmail.com',
+            'name' => 'Service User Two',
+            'email' => 'service2@gmail.com',
         ]);
 
         factory(App\User::class)->create([
