@@ -12,11 +12,6 @@ class RoleSeeder extends Seeder
     public function run()
     {
         factory(App\Role::class)->create([
-            'name' => 'Customer',
-            'slug' => 'customer'
-        ]);
-
-        factory(App\Role::class)->create([
             'name' => 'Admin',
             'slug' => 'admin'
         ]);

@@ -2,11 +2,15 @@
 
 Auth::routes();
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', 'PageController@landing')->name('landing');
+Route::get('home', 'HomeController@index')->name('home');
+
+Route::middleware(['auth'])
+->namespace('Admin')
+->prefix('admin')
+->name('admin.')
+->group(function () {
+    Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
+
+    Route::resource('issues', 'IssueController');
 });
-
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/check-role', 'HomeController@checkRole')->name('check-role');
-
-Route::resource('issues', 'Admin\IssueController');
