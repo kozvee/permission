@@ -39,4 +39,13 @@ class HomeController extends Controller
             echo $permission->name . ' ' . '<br>';
         }
     }
+
+    public function checkRole()
+    {
+        if (auth()->user()->hasRole('admin')) {
+            return 'U can Go!';
+        } else {
+            return 'Sry U cannot';
+        }
+    }
 }

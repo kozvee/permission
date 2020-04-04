@@ -48,6 +48,11 @@ class User extends Authenticatable
         }
     }
 
+    public function hasRole($role)
+    {
+        return auth()->user()->roles->contains('slug', $role);
+    }
+
     public function roles()
     {
         return $this->belongsToMany(Role::class); 
