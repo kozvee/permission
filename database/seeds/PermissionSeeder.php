@@ -12,23 +12,23 @@ class PermissionSeeder extends Seeder
     public function run()
     {
         factory(App\Permission::class)->create([
-            'name' => 'View Customer',
-            'slug' => 'view-customer'
+            'name' => 'View Issue',
+            'slug' => 'view-issue'
         ]);
 
         factory(App\Permission::class)->create([
-            'name' => 'Create Customer',
-            'slug' => 'create-customer'
+            'name' => 'Create Issue',
+            'slug' => 'create-issue'
         ]);
 
         factory(App\Permission::class)->create([
-            'name' => 'Edit Customer',
-            'slug' => 'edit-customer'
+            'name' => 'Edit Issue',
+            'slug' => 'edit-issue'
         ]);
 
         factory(App\Permission::class)->create([
-            'name' => 'Delete Customer',
-            'slug' => 'delete-customer'
+            'name' => 'Delete Issue',
+            'slug' => 'delete-issue'
         ]);
     }
 }

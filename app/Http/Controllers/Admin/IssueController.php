@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use App\Permission;
+use App\Http\Controllers\Controller;
+use App\Issue;
 use Illuminate\Http\Request;
 
-class PermissionController extends Controller
+class IssueController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +15,11 @@ class PermissionController extends Controller
      */
     public function index()
     {
-        //
+        if(auth()->user()->can('view-issue')) {
+            return 'U Can See Issues';
+        } else {
+            abort(403);
+        }
     }
 
     /**
@@ -24,7 +29,11 @@ class PermissionController extends Controller
      */
     public function create()
     {
-        //
+        if(auth()->user()->can('create-issue')) {
+            return 'U Can Create Issue';
+        } else {
+            abort(403); 
+        }
     }
 
     /**
@@ -41,10 +50,10 @@ class PermissionController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Permission  $permission
+     * @param  \App\Issue  $issue
      * @return \Illuminate\Http\Response
      */
-    public function show(Permission $permission)
+    public function show(Issue $issue)
     {
         //
     }
@@ -52,10 +61,10 @@ class PermissionController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Permission  $permission
+     * @param  \App\Issue  $issue
      * @return \Illuminate\Http\Response
      */
-    public function edit(Permission $permission)
+    public function edit(Issue $issue)
     {
         //
     }
@@ -64,10 +73,10 @@ class PermissionController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Permission  $permission
+     * @param  \App\Issue  $issue
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Permission $permission)
+    public function update(Request $request, Issue $issue)
     {
         //
     }
@@ -75,10 +84,10 @@ class PermissionController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Permission  $permission
+     * @param  \App\Issue  $issue
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Permission $permission)
+    public function destroy(Issue $issue)
     {
         //
     }

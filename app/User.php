@@ -39,15 +39,17 @@ class User extends Authenticatable
 
     public function checkPermission($permission)
     {
-        if(auth()->user()->role->permissions->contains('slug', $permission)) {
-            return true;
-        }
+        foreach(auth()->user()->roles as $role) {
+            if($role->permissions->contains('slug', $permission)) {
+                return true;
+            }
 
-        return false;
+            return false;
+        }
     }
 
-    public function role()
+    public function roles()
     {
-        return $this->belongsTo(Role::class);
+        return $this->belongsToMany(Role::class); 
     }
 }
