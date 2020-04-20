@@ -27,8 +27,13 @@ class RoleSeeder extends Seeder
         ]);
 
         factory(App\Role::class)->create([
-            'name' => 'Staff',
-            'slug' => 'staff'
+            'name' => 'Techinical Lead',
+            'slug' => 'technical-lead'
+        ]);
+
+        factory(App\Role::class)->create([
+            'name' => 'Techinical Staff',
+            'slug' => 'technical-staff'
         ]);
     }
 }

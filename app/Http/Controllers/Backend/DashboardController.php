@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\CustomerService;
+namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -9,6 +9,6 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        return view('customer-service.dashboard');
+        return view('backend.dashboard');
     }
 }

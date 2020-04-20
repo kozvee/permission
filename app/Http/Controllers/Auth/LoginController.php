@@ -67,26 +67,30 @@ class LoginController extends Controller
      */
     protected function authenticated($user)
     {
-        
+
         if(auth()->user()->roles()->first()) {
-            switch(auth()->user()->roles()->first()->slug){
-                case 'admin':
-                    return redirect(route('admin.dashboard'));
-                    break;
-
-                case 'sale-marketing':
-                    return redirect(route('sale-marketing.dashboard'));
-                    break;
-
-                case 'customer-service':
-                    return redirect(route('customer-service.dashboard'));
-                    break;
-
-                case 'staff':
-                    return redirect(route('staff.dashboard'));
-                    break;
-            }
+            return redirect(route('backend.dashboard'));
         }
+        
+        // if(auth()->user()->roles()->first()) {
+        //     switch(auth()->user()->roles()->first()->slug){
+        //         case 'admin':
+        //             return redirect(route('backend.dashboard'));
+        //             break;
+
+        //         case 'sale-marketing':
+        //             return redirect(route('sale-marketing.dashboard'));
+        //             break;
+
+        //         case 'customer-service':
+        //             return redirect(route('customer-service.dashboard'));
+        //             break;
+
+        //         case 'staff':
+        //             return redirect(route('staff.dashboard'));
+        //             break;
+        //     }
+        // }
     }
 
 }
