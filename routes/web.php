@@ -8,7 +8,7 @@ Route::get('whatami', 'HomeController@showRoles')->name('show-roles');
 Route::get('whatcani', 'HomeController@showPermissions')->name('show-permissions');
 Route::get('canigo', 'HomeController@checkRole')->name('check-role');
 
-Route::middleware(['auth', 'role:admin'])
+Route::middleware(['auth', 'backend'])
 ->namespace('Backend')
 ->prefix('backend')
 ->name('backend.')

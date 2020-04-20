@@ -42,13 +42,13 @@ class UserSeeder extends Seeder
         ]);
 
         factory(App\User::class)->create([
-            'name' => 'Staff',
-            'email' => 'staff@gmail.com',
+            'name' => 'Technical Lead',
+            'email' => 'lead@gmail.com',
         ]);
 
         factory(App\User::class)->create([
-            'name' => 'Staff Two',
-            'email' => 'staff2@gmail.com',
+            'name' => 'Technical Staff',
+            'email' => 'staff@gmail.com',
         ]);
 
         factory(App\User::class)->create([
