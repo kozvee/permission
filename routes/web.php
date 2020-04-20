@@ -16,7 +16,7 @@ Route::middleware(['auth', 'backend'])
     Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
 
     Route::resource('customer', 'CustomerController');
-    Route::resource('issues', 'IssueController');
+    Route::resource('issue', 'IssueController');
     Route::resource('router', 'RouterController');
 });
 

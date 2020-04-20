@@ -63,7 +63,7 @@ class RoleUserSeeder extends Seeder
                 'updated_at' => NOW()
             ],
             [
-                'role_id' => 4,
+                'role_id' => 5,
                 'user_id' => 8,
                 'created_at' => NOW(),
                 'updated_at' => NOW()

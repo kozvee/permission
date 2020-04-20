@@ -54,6 +54,16 @@
                                     <a class="nav-link" href="{{ route('backend.customer.index') }}">Customers</a>
                                 </li>
                             @endcan
+                            @can('view-issue')
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('backend.issue.index') }}">Issues</a>
+                                </li>
+                            @endcan
+                            @can('view-router')
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('backend.router.index') }}">Routers</a>
+                                </li>
+                            @endcan
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>

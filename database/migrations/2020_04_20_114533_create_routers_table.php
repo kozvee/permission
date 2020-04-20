@@ -15,6 +15,7 @@ class CreateRoutersTable extends Migration
     {
         Schema::create('routers', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('name');
             $table->timestamps();
         });
     }

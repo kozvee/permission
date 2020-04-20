@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\Backend;
 
-use App\Customer;
 use App\Http\Controllers\Controller;
+use App\Router;
 use Illuminate\Http\Request;
 
-class CustomerController extends Controller
+class RouterController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,11 +15,7 @@ class CustomerController extends Controller
      */
     public function index()
     {
-        $this->authorize('view-customer');
-
-        $customers = Customer::latest()->get();
-
-        return view('backend.customer.index', compact('customers'));
+        //
     }
 
     /**
@@ -29,10 +25,7 @@ class CustomerController extends Controller
      */
     public function create()
     {
-        $this->authorize('create-customer');
-
-        return view('backend.customer.create');
-
+        //
     }
 
     /**
@@ -43,25 +36,16 @@ class CustomerController extends Controller
      */
     public function store(Request $request)
     {
-        $this->authorize('create-customer');
-
-        $data = $request->validate([
-            'name' => 'required|max:255',
-        ]);
-
-        Customer::create($data);
-
-        return redirect(route('backend.customer.index'));
-
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Customer  $customer
+     * @param  \App\Router  $router
      * @return \Illuminate\Http\Response
      */
-    public function show(Customer $customer)
+    public function show(Router $router)
     {
         //
     }
@@ -69,10 +53,10 @@ class CustomerController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Customer  $customer
+     * @param  \App\Router  $router
      * @return \Illuminate\Http\Response
      */
-    public function edit(Customer $customer)
+    public function edit(Router $router)
     {
         //
     }
@@ -81,10 +65,10 @@ class CustomerController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Customer  $customer
+     * @param  \App\Router  $router
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Customer $customer)
+    public function update(Request $request, Router $router)
     {
         //
     }
@@ -92,10 +76,10 @@ class CustomerController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Customer  $customer
+     * @param  \App\Router  $router
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Customer $customer)
+    public function destroy(Router $router)
     {
         //
     }

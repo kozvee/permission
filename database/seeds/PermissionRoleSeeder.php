@@ -76,6 +76,30 @@ class PermissionRoleSeeder extends Seeder
                 'role_id' => 3,
                 'permission_id' => 1,
             ],
+            [
+                'role_id' => 4,
+                'permission_id' => 1,
+            ],
+            [
+                'role_id' => 4,
+                'permission_id' => 9,
+            ],
+            [
+                'role_id' => 4,
+                'permission_id' => 10,
+            ],
+            [
+                'role_id' => 4,
+                'permission_id' => 11,
+            ],
+            [
+                'role_id' => 5,
+                'permission_id' => 9,
+            ],
+            [
+                'role_id' => 5,
+                'permission_id' => 11,
+            ],
         ];
 
         foreach($items as $item) {
