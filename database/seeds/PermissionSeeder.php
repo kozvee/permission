@@ -70,5 +70,45 @@ class PermissionSeeder extends Seeder
             'name' => 'Delete Router',
             'slug' => 'delete-router'
         ]);
+
+        factory(App\Permission::class)->create([
+            'name' => 'View Role',
+            'slug' => 'view-role'
+        ]);
+
+        factory(App\Permission::class)->create([
+            'name' => 'Create Role',
+            'slug' => 'create-role'
+        ]);
+
+        factory(App\Permission::class)->create([
+            'name' => 'Edit Role',
+            'slug' => 'edit-role'
+        ]);
+
+        factory(App\Permission::class)->create([
+            'name' => 'Delete Role',
+            'slug' => 'delete-role'
+        ]);
+
+        factory(App\Permission::class)->create([
+            'name' => 'View User',
+            'slug' => 'view-user'
+        ]);
+
+        factory(App\Permission::class)->create([
+            'name' => 'Create User',
+            'slug' => 'create-user'
+        ]);
+
+        factory(App\Permission::class)->create([
+            'name' => 'Edit User',
+            'slug' => 'edit-user'
+        ]);
+
+        factory(App\Permission::class)->create([
+            'name' => 'Delete User',
+            'slug' => 'delete-user'
+        ]);
     }
 }

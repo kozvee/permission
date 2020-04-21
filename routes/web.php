@@ -15,6 +15,11 @@ Route::middleware(['auth', 'backend'])
 ->group(function () {
     Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
 
+    Route::resource('role', 'RoleController');
+    Route::get('role/{role}/permissions', 'RoleController@addPermission')->name('role.add-permission');
+    Route::post('role/{role}/permissions', 'RoleController@storePermission')->name('role.store-permission');
+
+    Route::resource('user', 'UserController');
     Route::resource('customer', 'CustomerController');
     Route::resource('issue', 'IssueController');
     Route::resource('router', 'RouterController');
