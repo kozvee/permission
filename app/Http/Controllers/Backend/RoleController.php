@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use App\Role;
+use App\Permission;
 use Illuminate\Http\Request;
 
 class RoleController extends Controller
@@ -101,12 +102,18 @@ class RoleController extends Controller
 
     public function addPermission(Role $role)
     {
-        return view('backend.role.permission', compact('role'));
+        $permissions = Permission::all();
+
+        return view('backend.role.permission', compact('role', 'permissions'));
     }
 
-    public function storePermission(Request $request, Role $role)
+    public function syncPermission(Request $request, Role $role)
     {
-        dd(request()->all());
+        // dd($request->permissions);
+        $role->permissions()->sync($request->permissions);
+
+        return back();
+
         // foreach($request->permissions as $permission) {
         //     echo $permission . '<br>';
         // }

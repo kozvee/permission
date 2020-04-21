@@ -17,7 +17,7 @@ Route::middleware(['auth', 'backend'])
 
     Route::resource('role', 'RoleController');
     Route::get('role/{role}/permissions', 'RoleController@addPermission')->name('role.add-permission');
-    Route::post('role/{role}/permissions', 'RoleController@storePermission')->name('role.store-permission');
+    Route::post('role/{role}/permissions', 'RoleController@syncPermission')->name('role.sync-permission');
 
     Route::resource('user', 'UserController');
     Route::resource('customer', 'CustomerController');

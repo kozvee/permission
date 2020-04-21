@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @push('scripts')
   <script>
     $('#select-all').change(function () {
@@ -9,70 +8,39 @@
         $('.privilege').prop('checked', false);
       }
     });
-
-    $('#select-all').trigger('change');   
-  </script>    
+    // $('#select-all').trigger('change');   
+  </script>
 @endpush
-
 @section('content')
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card mb-2">
-              <div class="card-header">Add Permission(s) to {{ $role->name }} Role</div>
-              <div class="card-body">
-                <form action="{{ route('backend.role.store-permission', $role) }}" method="post">
-                  @csrf
-
-                  <div class="form-group">
-                    <label for="resource">Choose Resource</label>
-                    <select class="form-control" id="resource" name="resource">
-                      <option value="role">Role</option>
-                      <option value="user">User</option>
-                      <option value="customer">Customer</option>
-                      <option value="issue">Issue</option>
-                      <option value="router">Router</option>
-                    </select>
-                  </div>
-                  
-                  <div class="form-group">
-                    <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="checkbox" id="select-all" name="select-all">
-                      <label class="form-check-label" for="select-all">
-                        Select All
-                      </label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                      <input class="form-check-input privilege" type="checkbox" value="view" id="view" name="permissions[]">
-                      <label class="form-check-label" for="view">
-                        View
-                      </label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                      <input class="form-check-input privilege" type="checkbox" value="create" id="create" name="permissions[]">
-                      <label class="form-check-label" for="create">
-                        Create
-                      </label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                      <input class="form-check-input privilege" type="checkbox" value="edit" id="edit" name="permissions[]">
-                      <label class="form-check-label" for="edit">
-                        Edit
-                      </label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                      <input class="form-check-input privilege" type="checkbox" value="delete" id="delete" name="permissions[]">
-                      <label class="form-check-label" for="delete">
-                        Delete
-                      </label>
-                    </div>
-                  </div>
-
-                  <button class="btn btn-block btn-secondary">Grant</button>
-                </form>
-              </div>
-            </div>
+  <div class="row">
+    <div class="col">
+      <div class="card mb-2">
+        <div class="card-header text-center">
+          Manage Permissions - {{ $role->name }} Role
         </div>
+        <div class="card-body">
+          <form action="{{ route('backend.role.sync-permission', $role) }}" method="post">
+            @csrf
+            <div class="form-group">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="select-all">
+                <label for="select-all" class="form-check-label">Select All</label>
+              </div>
+              @foreach($permissions as $permission)
+                <div class="form-check">
+                  <input class="form-check-input privilege" type="checkbox" value="{{ $permission->id }}" id="{{ $permission->slug }}" name="permissions[]" @if($role->permissions->contains($permission)) {{ "checked" }}  @endif>
+                  <label class="form-check-label" for="{{ $permission->slug }}">
+                    {{ $permission->name }}
+                  </label>
+                </div>
+              @endforeach
+            </div>
+            <button class="btn btn-block btn-secondary">Save</button>
+          </form>
+        </div>
+      </div>
     </div>
+  </div>
 </div>
 @endsection
